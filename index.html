@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Prueba - HTML5</title>
+    <style>
+        :root {
+            --primary-color: #4f46e5;
+            --primary-hover: #4338ca;
+            --bg-color: #f9fafb;
+            --card-bg: #ffffff;
+            --text-color: #1f2937;
+            --text-muted: #6b7280;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0 0 0.5rem 0;
+            font-size: 2.25rem;
+        }
+
+        header p {
+            margin: 0;
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            flex: 1;
+        }
+
+        .welcome-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .feature-card {
+            background-color: var(--card-bg);
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .feature-card h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+
+        .interactive-section {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-hover);
+        }
+
+        #counter {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        footer {
+            background-color: #111827;
+            color: var(--text-muted);
+            text-align: center;
+            padding: 1.5rem 1rem;
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Página de Prueba HTML</h1>
+        <p>Una plantilla de prueba minimalista y responsiva</p>
+    </header>
+
+    <main>
+        <section class="welcome-card">
+            <h2>¡Bienvenido!</h2>
+            <p>Esta es una página de prueba creada en HTML5 con estilos CSS modernos integrados. Sirve como demostración o punto de partida para tu proyecto web.</p>
+        </section>
+
+        <h2>Características</h2>
+        <section class="features">
+            <article class="feature-card">
+                <h3>Diseño Responsivo</h3>
+                <p>Se adapta perfectamente a pantallas de dispositivos móviles, tabletas y ordenadores.</p>
+            </article>
+            <article class="feature-card">
+                <h3>HTML5 Semántico</h3>
+                <p>Utiliza etiquetas semánticas como header, main, section, article y footer.</p>
+            </article>
+            <article class="feature-card">
+                <h3>Interactivo</h3>
+                <p>Incluye scripts sencillos en JavaScript para probar la interactividad en la página.</p>
+            </article>
+        </section>
+
+        <section class="interactive-section">
+            <p>Has hecho clic en el botón <span id="counter">0</span> veces.</p>
+            <button class="btn" onclick="incrementCounter()">Haz Clic Aquí</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - Página de prueba creada con éxito</p>
+    </footer>
+
+    <script>
+        let count = 0;
+        function incrementCounter() {
+            count++;
+            document.getElementById('counter').textContent = count;
+        }
+    </script>
+
+</body>
+</html>
